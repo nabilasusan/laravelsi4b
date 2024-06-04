@@ -11,15 +11,12 @@ class FakultasController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-
-
     {
         $fakultas = Fakultas::all();// select *from fakultas
         return view('fakultas.index')
             ->with('fakultas', $fakultas);
         //menghubungkan model dan view
         //fakultas adalah view
-
     }
 
     /**

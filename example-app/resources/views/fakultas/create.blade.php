@@ -1,5 +1,6 @@
 @extends('layout.main')
 
+<<<<<<< HEAD
 @section('title','Fakultas')
 
 @section('konten')
@@ -29,4 +30,12 @@
         </div>
       </div>
 </div>
+=======
+@selection('title', 'Tambah Fakultas')
+
+@selection('content')
+<div class ="row">
+    {{-- formulir tambah fakultas --}}
+<div>
+>>>>>>> d16e9f7cefb03ff078ca473a412db2f4cc5a9398
 @endsection

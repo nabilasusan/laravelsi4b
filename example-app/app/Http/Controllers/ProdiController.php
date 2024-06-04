@@ -12,9 +12,9 @@ class ProdiController extends Controller
      */
     public function index()
     {
-       $prodi = Prodi :: all();
-       return view('prodi.index')
-       ->with('prodi',$prodi);
+        $prodi = Prodi::all();// select *from fakultas
+        return view('prodi.index')
+            ->with('prodi', $prodi);
     }
 
     /**

@@ -19,7 +19,7 @@ Route::get('profil', function(){
 Route::get('welcome/{salam}', function ($salam){
     // return view('salam')
     //return 'selamat '. $salam;
-    return view('salam')->with('viewsalam', $salam); 
+    return view('salam')->with('viewsalam', $salam);
 });
 
 // Route tanpa parameter
@@ -35,3 +35,8 @@ Route::get('listdata', function(){
          ->with('viewmhs',$listmhs);
 
 });
+route::resource('fakultas',
+FakultasController::class);
+route::resource('prodi',
+ProdiController::class
+);
