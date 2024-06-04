@@ -8,11 +8,12 @@
 </head>
 <body>
     <h1>UMDP</h1>
-    <h2>Fakultas</h2>
-    <ul>
-        @foreach ($fakultas as $item)
-    <li>{{ $item["nama"] }} {{ $item["singkatan"] }} </li>
-    @endforeach
+<h2>program studi</h2>
+<ul>
+@foreach ($prodi as $item)
+<li>{{ $item["nama"] }} {{ $item["singkatan"] }}
+{{ $item["fakultas"] ["nama"] }} </li>
+@endforeach
 </ul>
 </body>
 </html>
