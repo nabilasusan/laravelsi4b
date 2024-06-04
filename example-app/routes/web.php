@@ -35,8 +35,6 @@ Route::get('listdata', function(){
          ->with('viewmhs',$listmhs);
 
 });
-route::resource('fakultas',
-FakultasController::class);
-route::resource('prodi',
-ProdiController::class
-);
+Route::resource('fakultas',FakultasController::class);
+Route::resource('prodi',ProdiController::class);
+Route::resource('mahasiswa',MahasiswaController::class);
