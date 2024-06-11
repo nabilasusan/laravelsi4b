@@ -1,58 +1,53 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>UMDP</h1>
-<h2>program studi</h2>
-<ul>
-@foreach ($prodi as $item)
-<li>{{ $item["nama"] }} {{ $item["singkatan"] }}
-{{ $item["fakultas"] ["nama"] }} </li>
-@endforeach
-</ul>
-</body>
-</html>
-=======
 @extends('layout.main')
 
 @section('title','Fakultas')
 
-@section('content')
-
+@section('konten')
+    {{-- <h1>UMDP</h1>
+    <h2>Fakultas</h2>
+    <ul>
+    @foreach ($fakultas as $item)
+        <li>{{$item ["nama"]}}{{$item["singkatan"]}}</li>
+    @endforeach --}}
+    </ul>
     <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Basic Table</h4>
+                  <h4 class="card-title">Fakultas</h4>
                   <p class="card-description">
-                    list data fakultas
+                    Add class <code>list data Fakultas</code>
                   </p>
+                  {{-- {{tombol tambah}} --}}
+                  <a href="{{route('fakultas.create')}}" class="btn btn-rounded btn-primary">Tambah</a>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>nama fakultas</th>
-                          <th>singkatan</th>
+                          <th>Nama Fakultas</th>
+                          <th>Singkatan</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach ($fakultas as $item)
-                         <tr>
-                            <td>{{ $item["nama"] }}</td>
-                            <td>{{ $item["singkatan"] }}</td>
+                        <tr>
+                            <td>{{$item ["nama"]}}</td>
+                            <td>{{$item["singkatan"]}}</td>
                         </tr>
-                        @endforeach
+                         @endforeach
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
             </div>
+            @if(session('success'))
+              <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+              <script>
+                  Swal.fire({
+                    title: "Good job!",
+                    text: "{{session('success') }}",
+                    icon: "success"
+                  });
+              </script>
+            @endif
 @endsection
-
->>>>>>> d16e9f7cefb03ff078ca473a412db2f4cc5a9398

@@ -1,8 +1,8 @@
-extends('layout.main')
+@extends('layout.main')
 
-@section('title',' Tambah Fakultas')
+@section('title','Fakultas')
 
-@section('content')
+@section('konten')
 
 <div class="row
 

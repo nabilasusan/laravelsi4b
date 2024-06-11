@@ -10,17 +10,18 @@
           <div class="card-body">
             <h4 class="card-title">Tambah Mahasiswa</h4>
             <p class="card-description">
-              Formulir tambah mahasiswa
+              Formulir ubah mahasiswa
             </p>
-            <form method="POST" action="{{ route('mahasiswa.store')}}" class ="forms-sample" enctype="multipart/form-data">
-            @csrf
+            <form method="POST" action="{{ route('mahasiswa.update',$mahasiswa["id"])}}" class ="forms-sample" enctype="multipart/form-data">
+              @method('put')
+              @csrf
               <div class="form-group">
                 <label for="text">id</label>
-                <input type="text" class="form-control" name="id" placeholder="">
+                <input type="text" class="form-control" name="id" placeholder="" value="{{$mahasiswa['id']}}">
               </div>
               <div class="form-group">
                 <label for="text">Npm</label>
-                <input type="text" class="form-control" name="npm" placeholder="">
+                <input type="text" class="form-control" name="npm" placeholder="" value="{{$mahasiswa['npm']}}">
               </div>
               <div class="form-group">
                 <label for="nama">Nama Mahasiswa</label>
@@ -42,7 +43,7 @@
                 <label for="text">prodi_id</label>
                 <select name="prodi_id" class="form-control">
                     @foreach ($prodi as $item)
-                        <option value="{{$item['id']}}">
+                        <option value="{{$item['id']}}" {{(old('prodi_id')==$item["id"])? "selected":($mahasiswa['prodi_id']==$item["id"]?"Selected":null)}}>
                             {{$item['nama']}}
                         </option>
                     @endforeach
